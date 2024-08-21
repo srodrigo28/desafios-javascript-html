@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 08</title>
+</head>
+<body id="caixa">    
+    <header>
+        <h1>Aula 08</h1>
+
+        <div class="btn-group">
+            <button id="mudar">Mudar</button>
+            <button id="ligar">Ligar</button>
+            <button id="desligar">Desligar</button>
+        </div>
+    </header>
+
+    <button id="toggle">Liga&Desliga</button>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            color: #fff;
+            background-color: #000;
+        }
+        header{
+            height: 100px;
+            padding: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: blueviolet;
+        }
+        h1{
+            cursor: pointer;
+            font-size: 40px;
+
+            transition: .7s;
+        }
+        h1:hover{
+            font-size: 10px;
+            transform: rotate(360deg);
+        }
+        button, #toggle{
+            width: 120px;
+            height: 50px;
+            padding: 7px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            cursor: pointer;
+
+            transition: .7s;
+        }
+        #toggle, button:hover{
+            border: none;
+            color: #fff;
+            border-radius: 10px;
+            background-color: brown;
+        }
+        #toggle{
+            width: 160px;
+            height: 80px;
+            margin-top: 50px;
+            margin-left: 50px;
+            transition: .9s;
+        }
+        #toggle:hover{
+            width: 200px;
+            height: 200px;
+
+            border-radius: 20%;
+
+            font-size: 1.4rem;
+            opacity: 0.8;
+
+            margin-top: 80px;
+            margin-left: 80px;
+
+            transform: rotate(360deg);
+        }
+        .light{
+            background-color: #fff;
+        }
+    </style>
+
+    <script>
+        var titulo = document.querySelector('h1')
+        var body = document.querySelector('#caixa')
+
+        var mudar = document.getElementById('mudar')
+        var ligar = document.querySelector('#ligar')
+        var desligar = document.querySelector('#desligar')
+        var toggle = document.getElementById('toggle')
+
+        mudar.onclick = () => { titulo.textContent = 'Novo titulo' } 
+        ligar.onclick = () => { body.style.backgroundColor = '#1c1c1c1c' }
+        desligar.onclick = () => { body.style.backgroundColor = 'black' }
+        
+        toggle.onclick = () => { body.classList.toggle('light') }
+    </script>
+</body>
+</html>
